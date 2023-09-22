@@ -3,6 +3,9 @@
 
 [![Build status](https://github.com/nishantmendiratta/uglify-my-js/actions/workflows/npm-publish-github-packages.yml/badge.svg?branch=main)](https://github.com/nishantmendiratta/uglify-my-js/actions)
 
+[![Node version](https://img.shields.io/badge/node-%3E=v12.18.2-green)](https://nodejs.org/)
+[![Npm version](https://img.shields.io/badge/npm-6.14.5-blue)](https://nodejs.org/)
+[![install size](https://packagephobia.com/badge?p=uglify-my-js)](https://packagephobia.com/result?p=uglify-my-js)
 
 ## Installation
 ```
