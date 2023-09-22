@@ -30,7 +30,7 @@ Output file is generated in the current directory. It will contain minified file
 
 This library is designed to support JS files - i you want to add a new language support, we'd love you to contribute them here.
 
-Please see [Portal Wallet Coding Guidelines](https://github.com/nishantmendiratta/uglify-my-js/blob/main/CODING_GUIDELINES.md) when writing your PRs.
+Please see [Coding Guidelines](https://github.com/nishantmendiratta/uglify-my-js/blob/main/CODING_GUIDELINES.md) when writing your PRs.
 
 File issues in the **Issues** tab in GitHub
 
