@@ -1,0 +1,36 @@
+{
+  "name": "uglify-my-js",
+  "version": "1.0.0",
+  "description": "Simple cli tool to minify javascript a file",
+  "main": "bin/index.js",
+  "bin": {
+    "uglifymyjs": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nishantmendiratta/uglify-my-js.git"
+  },
+  "keywords": [
+    "uglify",
+    "javascript",
+    "node",
+    "cli",
+    "tool"
+  ],
+  "author": "ThatJsDev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nishantmendiratta/uglify-my-js/issues"
+  },
+  "homepage": "https://github.com/nishantmendiratta/uglify-my-js#readme",
+  "dependencies": {
+    "boxen": "^7.1.1",
+    "chalk": "^5.3.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^5.88.2",
+    "yargs": "^17.7.2"
+  }
+}
