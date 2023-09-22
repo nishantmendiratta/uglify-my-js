@@ -1,6 +1,6 @@
 {
   "name": "uglify-my-js",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "Simple cli tool to minify javascript a file",
   "main": "bin/index.js",
   "bin": {
@@ -32,8 +32,5 @@
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^5.88.2",
     "yargs": "^17.7.2"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org"
   }
 }
