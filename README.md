@@ -1,7 +1,7 @@
 # uglify-my-js
 ## _A simple cli tool to minify single javascript file_
 
-[![Build status](https://github.com/nishantmendiratta/uglify-my-js/actions/workflows/npm-publish-github-packages.yml/badge.svg)](https://github.com/nishantmendiratta/uglify-my-js/actions)
+[![Build status](https://github.com/nishantmendiratta/uglify-my-js/actions/workflows/npm-publish-github-packages.yml/badge.svg?branch=main)](https://github.com/nishantmendiratta/uglify-my-js/actions)
 
 
 ## Installation
