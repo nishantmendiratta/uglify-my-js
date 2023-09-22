@@ -36,7 +36,7 @@ if(options.s) {
   const config = require('./webpack.config.js');
   const webpack = require('webpack');
 
-  const compiler = webpack({...config, entry: sourceJSPath, output: {path: path.resolve(__dirname), filename: '[name].bundle.min.js'}});
+  const compiler = webpack({...config, entry: sourceJSPath, output: {path: path.resolve('.'), filename: '[name].bundle.min.js'}});
 
   (async ()=>{
     const response = await process(compiler);
