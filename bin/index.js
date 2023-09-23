@@ -1,27 +1,24 @@
 #!/usr/bin/env node
 const yargs = require("yargs");
+const chalk = require("chalk");
+const boxen = require("boxen");
 const path = require("path");
 const utils = require("./utils.js");
 
-const usage = "\nUsage: uglifymyjs -s '/source.js'";
-
-
 const options = yargs
-      .usage(usage)
-       .option("s", {alias:"source", describe: "Pass absolute path of the source javascript file", type: "string", demandOption: true })  
+      .usage(utils.usage(chalk, boxen))
+       .option("s", {alias:"source", describe: "Pass absolute path of the source js file", type: "string", demandOption: true })  
       .help(true)
       .argv;
 let sourceJSPath =  options.s  || options.source;
 if(options.s=== null && options.source === null){ 
-  utils.showHelp(); 
+  utils.showHelp(chalk, boxen); 
   return; 
 } 
 
 async function process(compiler) {
   await new Promise((resolve, reject) => {
     compiler.run((err, res) => {
-      console.log('err', err)
-      console.log('res', res)
       if (err) {
         return reject(err);
       }
@@ -36,10 +33,10 @@ if(options.s) {
   const config = require('./webpack.config.js');
   const webpack = require('webpack');
 
-  const compiler = webpack({...config, entry: sourceJSPath, output: {path: path.resolve('.'), filename: '[name].bundle.min.js'}});
+  const compiler = webpack({...config, entry: sourceJSPath, output: {path: path.resolve('.'), filename: 'main.bundle.min.js'}});
 
-  (async ()=>{
+  (async (outputMessage, chalk, console)=>{
     const response = await process(compiler);
-    console.log('response', response);
-  })(); 
+    console.log(outputMessage(chalk));
+  })(utils.outputMessage, chalk, console); 
 }
