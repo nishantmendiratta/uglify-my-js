@@ -15,13 +15,9 @@ npm i uglify-my-js@latest
 Requires [Node.js](https://nodejs.org/) v10+ to run.
 
 ## Usage
-```
-    > uglifymyjs -s /your-project/absolute-path/function.js
-    [-s] means source. This argument is mandatory. It should be an absolute path to local file.
-```
-Output file is generated in the current directory. It will contain minified file and source-map
-    - _main.bundle.min.js_
-    - _main.bundle.min.js.map_
+<img width="453" alt="Screenshot 2023-09-23 at 8 10 32 PM" src="https://github.com/nishantmendiratta/uglify-my-js/assets/2558220/ac3a4f98-2770-467b-bfd0-684c6386ea97">
+
+Output file is generated in the current directory. It will contain minified file and source-map.
 
 ### Other helpful commands  
 ```
