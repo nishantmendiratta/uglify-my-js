@@ -8,7 +8,7 @@ module.exports = {
   output: {
     filename: '[name].bundle.min.js',
     // filename: PROD ? '[name].bundle.min.js' : '[name].bundle.js',
-    path: path.resolve(__dirname, 'public')
+    path: path.resolve(__dirname, 'public'),
   },
   optimization: {
     minimizer: [
@@ -28,12 +28,11 @@ module.exports = {
             beautify: false,
             comments: false,
           },
-          compress: true,
           ecma: 6,
           mangle: true,
         },
         sourceMap: true,
-      })
-    ]
+      }),
+    ],
   },
 };

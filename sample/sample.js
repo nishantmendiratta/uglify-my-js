@@ -1,5 +1,5 @@
 (function (window) {
-  appendNewElementToRoot = function (element) {
+  const appendNewElementToRoot = function (element) {
     if (!element) {
       return;
     }
@@ -10,6 +10,5 @@
     element.appendChild(h1);
   };
 
-  window.myThirdPartyLib = {appendNewElementToRoot};
+  window.myThirdPartyLib = { appendNewElementToRoot };
 })(window);
-

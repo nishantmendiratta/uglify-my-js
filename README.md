@@ -63,7 +63,7 @@ Please see [Coding Guidelines](https://github.com/nishantmendiratta/uglify-my-js
 
 File issues in the **Issues** tab in GitHub
 
-
+Use [eslint-config-wesbos](https://github.com/wesbos/eslint-config-wesbos)
 
 # Changelog
 

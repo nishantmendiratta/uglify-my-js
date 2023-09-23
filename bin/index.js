@@ -1,20 +1,25 @@
 #!/usr/bin/env node
-const yargs = require("yargs");
-const chalk = require("chalk");
-const boxen = require("boxen");
-const path = require("path");
-const utils = require("./utils.js");
+const yargs = require('yargs');
+const chalk = require('chalk');
+const boxen = require('boxen');
+const path = require('path');
+const webpack = require('webpack');
+const utils = require('./utils.js');
+const config = require('./webpack.config.js');
 
 const options = yargs
-      .usage(utils.usage(chalk, boxen))
-       .option("s", {alias:"source", describe: "Pass absolute path of the source js file", type: "string", demandOption: true })  
-      .help(true)
-      .argv;
-let sourceJSPath =  options.s  || options.source;
-if(options.s=== null && options.source === null){ 
-  utils.showHelp(chalk, boxen); 
-  return; 
-} 
+  .usage(utils.usage(chalk, boxen))
+  .option('s', {
+    alias: 'source',
+    describe: 'Pass absolute path of the source js file',
+    type: 'string',
+    demandOption: true,
+  })
+  .help(true).argv;
+let sourceJSPath = options.s || options.source;
+if (options.s === null && options.source === null) {
+  utils.showHelp(chalk, boxen);
+}
 
 async function process(compiler) {
   await new Promise((resolve, reject) => {
@@ -27,16 +32,17 @@ async function process(compiler) {
   });
 }
 
-if(options.s) {
+if (options.s) {
   sourceJSPath = options.s.toLowerCase();
   console.log('sourceJSPath', sourceJSPath);
-  const config = require('./webpack.config.js');
-  const webpack = require('webpack');
+  const compiler = webpack({
+    ...config,
+    entry: sourceJSPath,
+    output: { path: path.resolve('.'), filename: 'main.bundle.min.js' },
+  });
 
-  const compiler = webpack({...config, entry: sourceJSPath, output: {path: path.resolve('.'), filename: 'main.bundle.min.js'}});
-
-  (async (outputMessage, chalk, console)=>{
-    const response = await process(compiler);
-    console.log(outputMessage(chalk));
-  })(utils.outputMessage, chalk, console); 
+  (async (outputMessage, chalkInstance, console) => {
+    await process(compiler);
+    console.log(outputMessage(chalkInstance));
+  })(utils.outputMessage, chalk, console);
 }
