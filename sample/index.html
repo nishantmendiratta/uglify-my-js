@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript">
+    (function (window, document, tag, url, name, a, m) {
+      window[name] = window[name] || function () {
+        (window[name].q = window[name].q || []).push(arguments)
+      }, window[name].l = 1 * new Date();
+      a = document.createElement(tag),
+        m = document.getElementsByTagName(tag)[0];
+      a.async = 1;
+      a.src = url;
+      m.parentNode.insertBefore(a, m);
+    })(window, document, 'script', 'main.bundle.min.js', 'myThirdPartyLib');
+
+    function executeMinifiedLib() {
+      const element = document.getElementById('myThirdPartyLib-root');
+      window.myThirdPartyLib.appendNewElementToRoot(element);
+    }
+    window.onload = function(e) {
+      executeMinifiedLib();
+    }
+  </script>
+  <title>Sample HTML</title>
+</head>
+<body>
+  <div id="myThirdPartyLib-root"></div>
+  
+</body>
+</html>

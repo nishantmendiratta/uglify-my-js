@@ -25,6 +25,36 @@ Output file is generated in the current directory. It will contain minified file
 > uglifymyjs —version
 ```
 
+# Usage Example
+See [Sample](./Sample).
+
+# Dependency
+The tool is built on top of `uglifyjs-webpack-plugin`. Following is the fixed configuration currently it is using. Feel free add new issues if you want any customization.
+```
+{
+  cache: false,
+  parallel: true,
+  uglifyOptions: {
+    compress: {
+      drop_console: true,
+      warnings: false,
+    },
+    toplevel: true,
+    keep_classnames: undefined,
+    keep_fnames: false,
+    nameCache: null,
+    output: {
+      beautify: false,
+      comments: false,
+    },
+    compress: true,
+    ecma: 6,
+    mangle: true,
+  },
+  sourceMap: true,
+}
+```
+
 # Contributing
 
 This library is designed to support JS files - i you want to add a new language support, we'd love you to contribute them here.
@@ -32,6 +62,8 @@ This library is designed to support JS files - i you want to add a new language 
 Please see [Coding Guidelines](https://github.com/nishantmendiratta/uglify-my-js/blob/main/CODING_GUIDELINES.md) when writing your PRs.
 
 File issues in the **Issues** tab in GitHub
+
+
 
 # Changelog
 
